@@ -10,6 +10,10 @@ describe DockingStation do
     end
   end
 
+  it "checks if dock is empty" do
+    expect(subject.empty?).to eq(nil)
+  end
+
   it "releases working bikes" do
     bike = subject.release_bike
     expect(bike).to be_working
@@ -25,5 +29,7 @@ describe DockingStation do
     subject.dock(bike)
     expect(subject.bike).to eq bike
   end
+
+
 
 end
