@@ -16,7 +16,7 @@ describe DockingStation do
   end
 
   it "checks if dock is full" do
-    subject.dock(Bike.new)
+    20.times { subject.dock(Bike.new) }
     expect { subject.dock Bike.new }.to raise_error("docking station is full")
   end
 
@@ -33,6 +33,6 @@ describe DockingStation do
   it "shows bike availability" do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.bikes[0]).to eq bike
   end
 end
