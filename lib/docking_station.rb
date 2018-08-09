@@ -12,6 +12,10 @@ class DockingStation
     @bike = bike
   end
 
+  def empty?
+    raise "docking station is empty"
+  end
+
   
 
 end

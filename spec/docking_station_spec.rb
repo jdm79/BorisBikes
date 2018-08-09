@@ -10,9 +10,11 @@ describe DockingStation do
   #   end
   # end
 
-  # it "checks if dock is empty" do
-  #   expect(subject.empty?).to eq(nil)
-  # end
+  it "checks if dock is empty" do
+    # expect(subject.empty?).to eq(nil)
+    expect { subject.empty? }.to raise_error("docking station is empty")
+
+  end
 
   it "releases working bikes" do
     # bike = subject.release_bike
