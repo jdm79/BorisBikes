@@ -12,8 +12,12 @@ describe DockingStation do
 
   it "checks if dock is empty" do
     # expect(subject.empty?).to eq(nil)
-    expect { subject.empty? }.to raise_error("docking station is empty")
+    expect { subject.release_bike }.to raise_error("docking station is empty")
+  end
 
+  it "checks if dock is full" do
+    subject.dock(Bike.new)
+    expect { subject.dock Bike.new }.to raise_error("docking station is full")
   end
 
   it "releases working bikes" do
